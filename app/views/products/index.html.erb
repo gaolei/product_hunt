@@ -17,8 +17,8 @@
         <td><%= product.name %></td>
         <td><%= product.tagline %></td>
         <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_product_path(product), class: 'button button-outline' %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: :button %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path, class: :button -%>
