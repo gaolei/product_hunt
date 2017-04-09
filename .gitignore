@@ -19,5 +19,5 @@
 
 /node_modules
 /yarn-error.log
-
+*.sublime-workspace
 .byebug_history
