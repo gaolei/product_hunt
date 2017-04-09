@@ -1,7 +1,6 @@
-require 'test_helper'
+require 'application_system_test_case'
 
-class HomeTest < ActionDispatch::IntegrationTest
-  include Capybara::DSL
+class HomeTest < ApplicationSystemTestCase
   test 'loads correctly' do
     visit '/'
     assert_equal 200, page.status_code
