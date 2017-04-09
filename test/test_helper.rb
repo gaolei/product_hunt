@@ -2,16 +2,9 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'capybara/rails'
 require 'capybara/minitest'
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, browser: :firefox)
-end
-
-Capybara.javascript_driver = :firefox
-
-Capybara.configure do |config|
-  config.default_max_wait_time = 10 # seconds
-  config.default_driver        = :selenium
-end
+require 'capybara/poltergeist'
+Capybara.default_driver = :poltergeist
+Capybara.javascript_driver = :poltergeist
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
