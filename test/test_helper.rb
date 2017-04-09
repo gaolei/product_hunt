@@ -3,10 +3,10 @@ require 'rails/test_help'
 require 'capybara/rails'
 require 'capybara/minitest'
 Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
+  Capybara::Selenium::Driver.new(app, browser: :firefox)
 end
 
-Capybara.javascript_driver = :chrome
+Capybara.javascript_driver = :firefox
 
 Capybara.configure do |config|
   config.default_max_wait_time = 10 # seconds
