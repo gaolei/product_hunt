@@ -1,5 +1,6 @@
-(function () {
-  var product_name = document.getElementById("product_name");
-  product_name.setAttribute("data-list", "<%= @product_names.join(', ').to_s -%>");
-  new Awesomplete(product_name);
-}());
+var as_product_name;
+if (as_product_name == undefined) {
+  as_product_name = new Awesomplete(document.getElementById("product_name"), {minChars: 0, list: <%= raw @product_names.to_s -%>});
+} else {
+  as_product_name.list = <%= raw @product_names.to_s -%>;
+}
