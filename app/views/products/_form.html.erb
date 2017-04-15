@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name, 'data-remote': true, 'data-url': url_for(controller: 'products', action: 'awesomplete_product_name', format: 'js') %>
+    <%= form.text_field :name, id: :product_name, 'data-url': url_for(controller: 'products', action: 'awesomplete_product_name', format: 'js') %>
   </div>
 
   <div class="field">
@@ -26,3 +26,16 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<script type="text/javascript">
+window.addEventListener('input', function (e) {
+  if (e.target.id == "product_name") {
+    Rails.ajax({
+      type:'GET',
+      url: e.target.getAttribute('data-url'),
+      dataType: 'script'
+    });
+  }
+}, false);
+</script>
