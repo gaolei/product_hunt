@@ -1,0 +1,5 @@
+(function () {
+  var product_name = document.getElementById("product_name");
+  product_name.setAttribute("data-list", "<%= @product_names.join(', ').to_s -%>");
+  new Awesomplete(product_name);
+}());

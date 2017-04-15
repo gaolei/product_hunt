@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  def awesomplete_product_name
+    @product_names = (1..20).collect { Faker::Company.name }
+  end
+
   # GET /products
   # GET /products.json
   def index

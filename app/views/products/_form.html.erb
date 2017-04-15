@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name, class: 'awesomplete', "data-list": 'Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails' %>
+    <%= form.text_field :name, id: :product_name, 'data-remote': true, 'data-url': url_for(controller: 'products', action: 'awesomplete_product_name', format: 'js') %>
   </div>
 
   <div class="field">
