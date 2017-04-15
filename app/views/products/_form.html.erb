@@ -1,3 +1,4 @@
+<%= javascript_include_tag "awesomplete", async: true -%>
 <%= form_with(model: product, local: true) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
@@ -13,7 +14,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
+    <%= form.text_field :name, id: :product_name, class: 'awesomplete', "data-list": 'Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails' %>
   </div>
 
   <div class="field">
