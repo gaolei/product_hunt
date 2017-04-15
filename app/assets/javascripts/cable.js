@@ -6,7 +6,7 @@
 //= require_tree ./channels
 
 (function() {
-  this.App || (this.App = {});
+  this.App || (this.App = {awesomplete_query_running: false});
 
   App.cable = ActionCable.createConsumer();
 

@@ -30,12 +30,13 @@
 
 <script type="text/javascript">
 window.addEventListener('input', function (e) {
-  if (e.target.id == "product_name") {
+  if (e.target.id == "product_name" && App.awesomplete_query_running == false) {
     Rails.ajax({
       type:'GET',
       url: e.target.getAttribute('data-url')+'?q='+e.target.value,
       dataType: 'script'
     });
+    App.awesomplete_query_running = true;
   }
 }, false);
 </script>

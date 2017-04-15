@@ -4,3 +4,4 @@ if (as_product_name == undefined) {
   document.getElementById("product_name").focus();
 }
 as_product_name.list = <%= raw @product_names.to_s -%>;
+App.awesomplete_query_running = false;
