@@ -21,3 +21,4 @@
 /yarn-error.log
 *.sublime-workspace
 .byebug_history
+capybara-*.html

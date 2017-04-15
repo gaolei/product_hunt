@@ -4,7 +4,10 @@ class NewProductTest < ApplicationSystemTestCase
   test 'create a new product' do
     visit '/products/new'
 
+    fill_in 'product_name', with: 'L'
+    page.has_selector?('ul > li > mark')
     fill_in 'product_name', with: 'Le Wagon'
+    page.has_no_selector?('ul > li > mark')
     fill_in 'product_tagline', with: 'Change your life: Learn to code'
     click_button 'Create Product'
 
