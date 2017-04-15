@@ -2,7 +2,14 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def awesomplete_product_name
-    @product_names = (1..7).collect { Faker::Company.name }
+    company_name = params[:q]
+    @product_names = []
+    run_time = 0
+    until @product_names.length >= 5 || run_time >= 500
+      fake_name = Faker::Company.name
+      @product_names << fake_name if fake_name.include?(company_name)
+      run_time += 1
+    end
   end
 
   # GET /products
