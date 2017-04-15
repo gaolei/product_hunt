@@ -3,7 +3,6 @@ require 'application_system_test_case'
 class HomeTest < ApplicationSystemTestCase
   test 'loads correctly' do
     visit '/'
-    assert_equal 200, page.status_code
     assert_title 'ProductHunt'
     assert page.has_content?('Products')
   end

@@ -10,7 +10,6 @@ class NewProductTest < ApplicationSystemTestCase
 
     # Should be redirected to Home with new product
     assert_equal product_path(Product.last), page.current_path
-    assert_equal 200, page.status_code
     assert page.has_content?('Change your life: Learn to code')
   end
 end
