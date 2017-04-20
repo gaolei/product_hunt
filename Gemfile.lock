@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/sass-rails.git
-  revision: dfbcc6a53653d8908007e26324a0f299f026ec4f
+  revision: eafddf6eeecc7e8b3fb929e406cb64e401b759e3
   specs:
     sass-rails (6.0.0.beta1)
       railties (>= 4.0.0, < 5.1)
